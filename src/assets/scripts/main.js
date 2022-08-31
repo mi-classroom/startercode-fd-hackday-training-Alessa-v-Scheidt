@@ -6,22 +6,29 @@ class FormValidator {
     this.errorCount = 0;
   }
 
-  scan(){
+  scan() {
     document.querySelectorAll('form[data-js-validate=true]').forEach((form) => {
-
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        this.checkForm(form);
+      })
     });
   };
 
-  checkForm(form){
+  checkForm(form) {
     const fields = form.querySelectorAll("[required]");
+    let hasErrors = false;
 
-    /* Hier bitte die Validierung einfügen
-    
-    …
-    …
-    …
- 
-    */
+    for (const field of fields) {
+      if (field.value.length < 5) {
+        field.classList.add("ut-has-error")
+        hasErrors = true;
+      } else {
+        field.classList.remove("ut-has-error")
+      }
+    }
+
+    if (!form.hasErrors) form.submit();
   };
 }
 
@@ -32,7 +39,7 @@ class NavToNeighbours {
     const navSnippet = `
       <div class="nav-wrap">
       </div>`;
-    
+
     document.getElementById('mainContent').insertAdjacentHTML('beforeend', navSnippet);
   }
 
@@ -43,16 +50,16 @@ class NavToNeighbours {
   };
 }
 
-class Accordian { 
+class Accordian {
   constructor() {
     this.elements = document.querySelectorAll("[data-target]");
-  } 
+  }
 
   init() {
     this.elements.forEach((ele) => {
 
     });
-  } 
+  }
 }
 
 

@@ -5,8 +5,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1.0">
       <title>Cranach Digital Archive | Kurprinz Johann Friedrich von Sachsen</title>
-      <link href="/assets/main.css" rel="stylesheet">
-      <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+      <link href="https://mi-classroom.github.io/startercode-fd-hackday-training-Alessa-v-Scheidt/assets/main.css" rel="stylesheet">
+      <link rel="icon" type="image/svg+xml" href="https://mi-classroom.github.io/startercode-fd-hackday-training-Alessa-v-Scheidt/assets/images/favicon.svg">
     </head>
     <body>
     <div class="page">
@@ -50,7 +50,21 @@
           
 <div>
   <h3>Metadaten zur Abbildung</h3>
-  <form>
+  <form class="form-field" data-js-validate="true">
+    <input type="text" name="dateiart" id="dateiart" required>
+    <label for="dateiart">Dateiart</label>
+    <textarea name="beschreibung" id="beschreibung" required></textarea>
+    <label for="beschreibung">Beschreibung</label>
+    <input type="text" name="rechte" id="rechte" required>
+    <label for="rechte">Abbildung Rechte</label>
+    <input type="text" name="quelle" id="quelle" required>
+    <label for="quelle">Abbildung Quelle</label>
+    <input type="date" name="datum" id="datum" required>
+    <label for="datum">Datum</label>
+    <div class="buttons">
+      <button class="form-field__button" type="reset">abbrechen</button>
+      <button class="form-field__button" type="submit">speichern</button>
+    </div>
   </form>
 </div>
 
@@ -58,11 +72,10 @@
 
         <div class="artefact-description">
           <h2>Kurprinz Johann Friedrich von Sachsen</h2>
+          <h4 class="zuschreibung">Lucas Cranach der Ältere</h3>
           <dl class="rootdata">
             <dt>Inventarnummer</dt>
             <dd>DE_KSW_G11</dd>
-            <dt>Zuschreibung</dt>
-            <dd>Lucas Cranach der Ältere</dd> 
             <dt>Datum</dt>
             <dd>1526</dd>
             <dt>Klassifikation</dt>
@@ -97,7 +110,7 @@
 </footer>
 
     </div>
-    <script src="/assets/js/main.js"></script>
+    <script src="https://mi-classroom.github.io/startercode-fd-hackday-training-Alessa-v-Scheidt/assets/js/main.js"></script>
   </body>
   </html>
   

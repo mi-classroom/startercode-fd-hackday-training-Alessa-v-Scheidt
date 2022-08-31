@@ -6,58 +6,32 @@ class FormValidator {
     this.errorCount = 0;
   }
 
-  scan(){
+  scan() {
     document.querySelectorAll('form[data-js-validate=true]').forEach((form) => {
-
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        this.checkForm(form);
+      })
     });
   };
 
-  checkForm(form){
+  checkForm(form) {
     const fields = form.querySelectorAll("[required]");
+    let hasErrors = false;
 
-    /* Hier bitte die Validierung einfügen
-    
-    …
-    …
-    …
- 
-    */
-  };
-}
-
-class ViewSwitcher {
-  constructor() {
-    this.switcherComponent = document.querySelector('#viewSwitcher');
-    this.overviewContainer = document.querySelector('#overview');
-  }
-
-  init(){
-
-    /* Gibt es überhaupt einen Overview Container?
-       Denn auf den Detailseiten gibt es ja keinen :) */
-    if (this.overviewContainer === null) {
-      document.getElementById('viewSwitcher').remove();
-      return;
+    for (const field of fields) {
+      if (field.value.length < 5) {
+        field.classList.add("ut-has-error")
+        hasErrors = true;
+      } else {
+        field.classList.remove("ut-has-error")
+      }
     }
 
-    /* Default aktivieren */
-    this.switcherComponent.querySelector('[data-view=card-view]').classList.add('is-active');
-
-    /* Hier bitte den restlichen Code für den ViewSwitcher einfügen.
-       Für den Switcher Button gibt es schon die CSS-Klassen
-       card-view: für den Card View (default)
-       list-view: für den List View
-
-       …
-       …
-       …
-
-    */
-  };
-
-  changeView(ele){
+    if (!form.hasErrors) form.submit();
   };
 }
+
 class NavToNeighbours {
 
   createNavigation(prevItem, nextItem) {
@@ -65,7 +39,7 @@ class NavToNeighbours {
     const navSnippet = `
       <div class="nav-wrap">
       </div>`;
-    
+
     document.getElementById('mainContent').insertAdjacentHTML('beforeend', navSnippet);
   }
 
@@ -74,38 +48,29 @@ class NavToNeighbours {
     if (typeof nextItem === 'undefined') return;
     this.createNavigation(prevItem, nextItem);
   };
-
-
 }
 
-class Accordian { 
+class Accordian {
   constructor() {
     this.elements = document.querySelectorAll("[data-target]");
-  } 
+  }
 
   init() {
     this.elements.forEach((ele) => {
 
     });
-  } 
+  }
 }
-
-
 
 
 /* Main
 ============================================================================ */
 
-
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", () => {
 
   /* Form Validator */
   const validator = new FormValidator();
   validator.scan();
-
-  /* View Switcher */
-  const switcher = new ViewSwitcher();
-  switcher.init();
 
   /* Accordion */
   const accordian = new Accordian();

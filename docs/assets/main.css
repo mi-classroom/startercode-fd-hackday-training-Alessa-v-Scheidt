@@ -252,11 +252,21 @@ h3 {
   padding-bottom: 1.28rem;
   font-size: 1.6rem;
 }
+@media (max-width: 720px) {
+  .herotext {
+    font-size: 1.28rem;
+  }
+}
 
 /* Longtext
 ############################################################################ */
 .longtext * {
   font-size: 1.28rem;
+}
+
+.zuschreibung {
+  color: var(--interaction-color);
+  margin: 1rem 0 1.28rem 0;
 }
 
 button.btn {
@@ -320,6 +330,19 @@ button.btn.is-active {
   grid-template-columns: 1fr;
 }
 
+@media only screen and (min-width: 720px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-container-zweispalter {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 /* Page
 ############################################################################ */
 .page {
@@ -329,11 +352,16 @@ button.btn.is-active {
 
 /* Image with Caption
 ############################################################################ */
+.image-with-caption {
+  background-color: var(--bg-color-card);
+}
 .image-with-caption > img {
   width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
 }
 .image-with-caption > figcaption {
-  /* TBD */
+  padding: 1.28rem;
 }
 
 /* Artefact Navigation
@@ -462,6 +490,11 @@ button.btn.is-active {
 .header > h1 {
   flex-grow: 1;
 }
+@media (max-width: 720px) {
+  .header > h1 {
+    font-size: 1.6rem;
+  }
+}
 
 /* Rounded Card
 ############################################################################ */
@@ -500,14 +533,20 @@ button.btn.is-active {
 ############################################################################ */
 .form-field {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 .form-field > input[type=text], .form-field > input[type=date], .form-field > textarea {
   width: 100%;
   padding: 0.4rem;
   border: none;
   margin-bottom: 0.4rem;
+  margin-top: 1rem;
   background-color: var(--bg-color-form);
   color: var(--text-color);
+}
+.form-field > input[type=date] {
+  max-width: 150px;
 }
 .form-field > textarea {
   min-height: 6rem;
@@ -518,6 +557,7 @@ button.btn.is-active {
 .form-field__button {
   padding: 0.8rem;
   border: none;
+  margin-top: 2rem;
   background-color: var(--interaction-color);
 }
 .form-field__button:hover {
@@ -558,7 +598,6 @@ button.btn.is-active {
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
   content: "";
 }
 

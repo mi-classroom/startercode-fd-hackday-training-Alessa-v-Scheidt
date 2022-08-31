@@ -2,12 +2,16 @@
 ############################################################################ */
 
 .image-with-caption {
+  background-color: var(--bg-color-card);
+
   >img {
     width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
   }
 
   >figcaption {
-    /* TBD */
+    padding: $m;
   }
 }
 
@@ -170,6 +174,10 @@
 
   & > h1 {
     flex-grow: 1;
+  
+    @media (max-width: $vp-medium) {
+      font-size: $l;
+    }
   }
 }
 
@@ -217,6 +225,8 @@
 
 .form-field {
   margin-bottom: $s;
+  display: flex;
+  flex-direction: column;
 
   & > input[type="text"],
   & > input[type="date"],
@@ -225,8 +235,13 @@
     padding: calc($xs / 2);
     border: none;
     margin-bottom: calc($xs / 2);
+    margin-top: $s;
     background-color: var(--bg-color-form);
     color: var(--text-color);
+  }
+
+  & > input[type="date"] {
+    max-width: 150px;
   }
 
   & > textarea {
@@ -240,6 +255,7 @@
   &__button {
     padding: $xs;
     border: none;
+    margin-top: $xl;
     background-color: var(--interaction-color);
 
     &:hover {
