@@ -300,7 +300,7 @@ button.btn.is-active {
 .grid-container {
   display: grid;
   gap: 1.28rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(4, 1fr);
   transition: all 0.5s;
 }
 .grid-container > li > a {
@@ -317,7 +317,7 @@ button.btn.is-active {
 .grid-container-zweispalter {
   display: grid;
   gap: 1.28rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 /* Page
@@ -329,11 +329,16 @@ button.btn.is-active {
 
 /* Image with Caption
 ############################################################################ */
+.image-with-caption {
+  background-color: var(--bg-color-card);
+}
 .image-with-caption > img {
   width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
 }
 .image-with-caption > figcaption {
-  /* TBD */
+  padding: 1.28rem;
 }
 
 /* Artefact Navigation
@@ -558,7 +563,6 @@ button.btn.is-active {
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
   content: "";
 }
 

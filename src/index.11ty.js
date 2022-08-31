@@ -9,26 +9,16 @@ const generateItems = (itemData) => {
     return `
       <li>
         <a href="masterpieces/${item.inventory_number}/">
-          <figure class="rounded-card ut-bo-shadow">
+          <figure class="image-with-caption ut-bo-shadow">
             <img
               src="${item.img_src}"
               title="${this.maskEntities(item.title)}">
             <figcaption class="ut-bg-gradient">
               <p>${item.title}</p>
-              <dl class="additional-info">
-                <dt>Zuschreibung:</dt>
-                <dd>${item.involved_persons[0].name}</dd>
-                <dt>Datierung:</dt>
-                <dd>${item.dating}</dd>
-                <dt>Inventarnummer:</dt>
-                <dd>${item.inventory_number}</dd>
-                <dt>Maße:</dt>
-                <dd>${item.dimensions}</dd>
-              </dl>
             </figcaption>
           </figure>
-        </li>
-      </a>
+        </a>
+      </li>
     `;
   });
 

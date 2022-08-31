@@ -2,12 +2,16 @@
 ############################################################################ */
 
 .image-with-caption {
+  background-color: var(--bg-color-card);
+
   >img {
     width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
   }
 
   >figcaption {
-    /* TBD */
+    padding: $m;
   }
 }
 
