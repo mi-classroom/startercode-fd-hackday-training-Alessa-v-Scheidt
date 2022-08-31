@@ -252,6 +252,11 @@ h3 {
   padding-bottom: 1.28rem;
   font-size: 1.6rem;
 }
+@media (max-width: 720px) {
+  .herotext {
+    font-size: 1.28rem;
+  }
+}
 
 /* Longtext
 ############################################################################ */
@@ -479,6 +484,11 @@ button.btn.is-active {
 }
 .header > h1 {
   flex-grow: 1;
+}
+@media (max-width: 720px) {
+  .header > h1 {
+    font-size: 1.6rem;
+  }
 }
 
 /* Rounded Card

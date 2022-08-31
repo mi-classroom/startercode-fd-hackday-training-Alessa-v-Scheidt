@@ -42,6 +42,10 @@ h3 {
 .herotext {
   padding-bottom: $m;
   font-size: $l;
+
+  @media (max-width: $vp-medium) {
+    font-size: $m;
+  }
 }
 
 /* Longtext
