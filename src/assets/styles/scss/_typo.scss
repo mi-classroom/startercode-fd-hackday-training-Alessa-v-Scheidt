@@ -54,3 +54,8 @@ h3 {
 .longtext * {
   font-size: $m;
 }
+
+.zuschreibung {
+  color: var(--interaction-color);
+  margin: $s 0 $m 0;
+}

@@ -57,11 +57,10 @@ exports.render = function (pageData) {
 
         <div class="artefact-description">
           <h2>${content.title}</h2>
+          <h4 class="zuschreibung">${content.involved_persons[0].name}</h3>
           <dl class="rootdata">
             <dt>Inventarnummer</dt>
             <dd>${content.inventory_number}</dd>
-            <dt>Zuschreibung</dt>
-            <dd>${content.involved_persons[0].name}</dd> 
             <dt>Datum</dt>
             <dd>${content.dating}</dd>
             <dt>Klassifikation</dt>

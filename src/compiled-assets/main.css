@@ -264,6 +264,11 @@ h3 {
   font-size: 1.28rem;
 }
 
+.zuschreibung {
+  color: var(--interaction-color);
+  margin: 1rem 0 1.28rem 0;
+}
+
 button.btn {
   padding: 0;
   border: none;
