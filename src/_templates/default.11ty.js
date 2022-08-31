@@ -12,8 +12,8 @@ exports.render = function (pageData) {
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1.0">
       <title>Cranach Digital Archive | ${data.title}</title>
-      <link href="./assets/main.css" rel="stylesheet">
-      <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+      <link href="https://mi-classroom.github.io/startercode-fd-hackday-training-Alessa-v-Scheidt/assets/main.css" rel="stylesheet">
+      <link rel="icon" type="image/svg+xml" href="https://mi-classroom.github.io/startercode-fd-hackday-training-Alessa-v-Scheidt/assets/images/favicon.svg">
     </head>
     <body>
     <div class="page">
@@ -21,7 +21,7 @@ exports.render = function (pageData) {
       ${data.content}
       ${footer.html}
     </div>
-    <script src="./assets/js/main.js"></script>
+    <script src="https://mi-classroom.github.io/startercode-fd-hackday-training-Alessa-v-Scheidt/assets/js/main.js"></script>
   </body>
   </html>
   `;
