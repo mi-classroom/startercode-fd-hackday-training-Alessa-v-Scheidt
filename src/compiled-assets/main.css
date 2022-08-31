@@ -518,14 +518,20 @@ button.btn.is-active {
 ############################################################################ */
 .form-field {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 .form-field > input[type=text], .form-field > input[type=date], .form-field > textarea {
   width: 100%;
   padding: 0.4rem;
   border: none;
   margin-bottom: 0.4rem;
+  margin-top: 1rem;
   background-color: var(--bg-color-form);
   color: var(--text-color);
+}
+.form-field > input[type=date] {
+  max-width: 150px;
 }
 .form-field > textarea {
   min-height: 6rem;
@@ -536,6 +542,7 @@ button.btn.is-active {
 .form-field__button {
   padding: 0.8rem;
   border: none;
+  margin-top: 2rem;
   background-color: var(--interaction-color);
 }
 .form-field__button:hover {
